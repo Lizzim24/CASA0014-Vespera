@@ -158,7 +158,7 @@ Below are photos and screenshots showing the setup, interaction, and performance
 
 ### 💡 4. Reaction to Bright Light
 <p align="center">
-  <img src="./imgs/bright_test.gif" width="500">
+  <img src="./imgs/bright-test.gif" width="500">
   <br>
   <em>In bright surroundings, the lamp automatically reduces its brightness.</em>
 </p>
@@ -166,7 +166,7 @@ Below are photos and screenshots showing the setup, interaction, and performance
 
 ### 🌙 5. Reaction to Darkness
 <p align="center">
-  <img src="./imgs/dark_test.gif" width="500">
+  <img src="./imgs/dark-test.gif" width="500">
   <br>
   <em>In darker environments, the lamp glows brighter – demonstrating the inverse brightness mechanism.</em>
 </p>
@@ -174,7 +174,7 @@ Below are photos and screenshots showing the setup, interaction, and performance
 
 ### 🧠 6. MQTT Explorer Interface
 <p align="center">
-  <img src="./imgs/mqtt_explorer.gif" width="600">
+  <img src="./imgs/mqtt_explorer.png" width="600">
   <br>
   <em>MQTT Explorer showing topics like /cmd/power, /cmd/mode, and live payload updates.</em>
 </p>
@@ -182,7 +182,7 @@ Below are photos and screenshots showing the setup, interaction, and performance
 
 ### 💻 7. Serial Monitor Output
 <p align="center">
-  <img src="./imgs/serial_output.jpg" width="600">
+  <img src="./imgs/serial-output.gif" width="600">
   <br>
   <em>Serial Monitor confirming Wi-Fi and MQTT connections, and publishing payload logs.</em>
 </p>
@@ -190,7 +190,7 @@ Below are photos and screenshots showing the setup, interaction, and performance
 
 ### 👩‍💻 8. Demonstration
 <p align="center">
-  <img src="./imgs/demo_action.jpg" width="600">
+  <img src="./imgs/demo_action.mov" width="600">
   <br>
   <em>Demonstration of the lamp reacting to ambient light during the prototype showcase.</em>
 </p>
