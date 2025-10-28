@@ -160,7 +160,7 @@ Below are photos and screenshots showing the setup, interaction, and performance
 <p align="center">
   <img src="./imgs/bright-test.gif" width="500">
   <br>
-  <em>In bright surroundings, the lamp automatically reduces its brightness.</em>
+  <em>In bright surroundings, the Vespera automatically reduces its brightness.</em>
 </p>
 
 
@@ -168,7 +168,7 @@ Below are photos and screenshots showing the setup, interaction, and performance
 <p align="center">
   <img src="./imgs/dark-test.gif" width="500">
   <br>
-  <em>In darker environments, the lamp glows brighter – demonstrating the inverse brightness mechanism.</em>
+  <em>In darker environments, the Vesrera glows brighter – demonstrating the inverse brightness mechanism.</em>
 </p>
 
 
@@ -189,10 +189,13 @@ Below are photos and screenshots showing the setup, interaction, and performance
 
 
 ### 👩‍💻 8. Demonstration
+
+👉 [**Watch the full demo on YouTube**](https://youtu.be/OK64bJgZpPc)
+
+[![Watch the demo](https://img.youtube.com/vi/OK64bJgZpPc/0.jpg)](https://youtu.be/OK64bJgZpPc)
+
 <p align="center">
-  <img src="./imgs/demo-action.MP4" width="600">
-  <br>
-  <em>Demonstration of the lamp reacting to ambient light during the prototype showcase.</em>
+  <em>Demonstration of the Vespera reacting to ambient light during the prototype showcase.</em>
 </p>
 
 ---
@@ -210,9 +213,8 @@ Below are photos and screenshots showing the setup, interaction, and performance
 - Develop **adaptive brightness learning** — allow the lamp to learn user preferences over time.  
 - Implement **gesture-based or proximity interaction** for touch-free control.  
 - Create a **web dashboard** showing real-time brightness and historical trends using MQTT + D3.js.  
-- Add **sound-reactive mode**, making the lamp respond to ambient music.  
+- Add **sound-reactive mode**, making the Vespera respond to ambient music.  
 - Build a **3D-printed biophilic shell** inspired by natural light patterns.  
-
 
 ---
 
@@ -250,8 +252,8 @@ In `arduino_secrets.h` add:
 ### 5️⃣ Test Interaction
 | Action | Effect |
 |--------|---------|
-| Cover LDR | Lamp brightens |
-| Expose LDR | Lamp dims |
+| Cover LDR | Lights brightens |
+| Expose LDR | Lights dims |
 | Short press | Change lighting mode |
 | Long press | Toggle power (on/off) |
 
@@ -271,5 +273,4 @@ In `arduino_secrets.h` add:
 
 ## 📘 License
 Project for **UCL CASA0014 – Internet of Things (2025)**  
-© 2025 **Lizi Wang** All rights reserved.  
-Educational use only.
+© 2025 **Lizi Wang** All rights reserved.  Educational use only.
