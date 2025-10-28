@@ -190,7 +190,7 @@ Below are photos and screenshots showing the setup, interaction, and performance
 
 ### 👩‍💻 8. Demonstration
 <p align="center">
-  <img src="./imgs/demo_action.MP4" width="600">
+  <img src="./imgs/demo-action.MP4" width="600">
   <br>
   <em>Demonstration of the lamp reacting to ambient light during the prototype showcase.</em>
 </p>
