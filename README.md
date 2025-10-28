@@ -104,11 +104,11 @@ Vespera is an interactive lighting prototype that:
 
 | Mode | Description | Example |
 |------|--------------|----------|
-| **CCT** | Bright → cool (128,216,255), Dark → warm (255,193,128) | ![CCT Mode](./imgs/mode_cct.jpg) |
-| **Rainbow** | Flowing gradient animation | ![Rainbow Mode](./imgs/mode_rainbow.jpg) |
-| **Comet** | Moving light with fading trail | ![Comet Mode](./imgs/mode_comet.jpg) |
-| **Twinkle** | Random sparkles over dim blue | ![Twinkle Mode](./imgs/mode_twinkle.jpg) |
-| **Breath** | Soft pulsating breathing light | ![Breath Mode](./imgs/mode_breath.jpg) |
+| **CCT** | Bright → cool (128,216,255), Dark → warm (255,193,128) | ![CCT Mode](./imgs/mode-cct.gif) |
+| **Rainbow** | Flowing gradient animation | ![Rainbow Mode](./imgs/mode-rainbow.gif) |
+| **Comet** | Moving light with fading trail | ![Comet Mode](./imgs/mode-comet.gif) |
+| **Twinkle** | Random sparkles over dim blue | ![Twinkle Mode](./imgs/mode-twinkle.gif) |
+| **Breath** | Soft pulsating breathing light | ![Breath Mode](./imgs/mode-breath.gif) |
 
 ---
 
@@ -158,7 +158,7 @@ Below are photos and screenshots showing the setup, interaction, and performance
 
 ### 💡 4. Reaction to Bright Light
 <p align="center">
-  <img src="./imgs/bright_test.jpg" width="500">
+  <img src="./imgs/bright-test.gif" width="500">
   <br>
   <em>In bright surroundings, the lamp automatically reduces its brightness.</em>
 </p>
@@ -166,7 +166,7 @@ Below are photos and screenshots showing the setup, interaction, and performance
 
 ### 🌙 5. Reaction to Darkness
 <p align="center">
-  <img src="./imgs/dark_test.jpg" width="500">
+  <img src="./imgs/dark-test.gif" width="500">
   <br>
   <em>In darker environments, the lamp glows brighter – demonstrating the inverse brightness mechanism.</em>
 </p>
@@ -182,7 +182,7 @@ Below are photos and screenshots showing the setup, interaction, and performance
 
 ### 💻 7. Serial Monitor Output
 <p align="center">
-  <img src="./imgs/serial_output.jpg" width="600">
+  <img src="./imgs/serial-output.gif" width="600">
   <br>
   <em>Serial Monitor confirming Wi-Fi and MQTT connections, and publishing payload logs.</em>
 </p>
@@ -190,7 +190,7 @@ Below are photos and screenshots showing the setup, interaction, and performance
 
 ### 👩‍💻 8. Demonstration
 <p align="center">
-  <img src="./imgs/demo_action.jpg" width="600">
+  <img src="./imgs/demo_action.mov" width="600">
   <br>
   <em>Demonstration of the lamp reacting to ambient light during the prototype showcase.</em>
 </p>
