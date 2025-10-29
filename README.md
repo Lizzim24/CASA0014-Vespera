@@ -9,7 +9,8 @@ A multi-mode IoT lighting prototype that reacts inversely to ambient brightness 
 ## ✨ Overview
 
 **Vespera Lamp** explores how ambient light and human interaction can shape digital behavior.  
-The system **brightens in darkness** and **dims under strong light**, symbolizing balance between light and shadow.  
+The idea came from the name **"Vespera"**, which in Latin means evening, the moment when day turns into night. The visual modes also represent the night sky, **Twinkle** and **Comet** are like stars moving above, and **Rainbow** reflects the colors of the changing sky. 
+The system **brightens in darkness** and **dims under strong light**, just like a home light that wakes up when you need it. 
 It can be locally controlled via a button or remotely through **MQTT topics**.
 
 Vespera lamp is an interactive lighting prototype that:
