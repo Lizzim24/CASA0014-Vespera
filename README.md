@@ -49,7 +49,7 @@ Vespera lamp is an interactive lighting prototype that:
 | MKR1010 onboard LED | 25 (R) / 26 (G) / 27 (B) | Used for status and preview | Controls onboard RGB output |
 
 <p align="center">
-  <img src="./imgs/circuit_diagram.jpg" width="600">
+  <img src="./imgs/circuit_diagram.png" width="600">
   <br>
   <em>Wiring diagram of the Vespera prototype.</em>
 </p>
@@ -58,7 +58,7 @@ Vespera lamp is an interactive lighting prototype that:
 
 ## 🧠 Software Logic Flow
 
-> This section explains how the Vespera controller works — from setup to MQTT communication and light rendering.
+> This section explains how the Vespera controller works.
 > It outlines the data flow, control logic, and decision-making between the LDR sensor, button, and network system.
 
 ### ⚙️ 1) Setup Stage
@@ -189,7 +189,7 @@ Below are photos and screenshots showing the setup, interaction, and performance
 
 ### 💡 4. Reaction to Bright Light
 <p align="center">
-  <img src="./imgs/bright-test.gif" width="500">
+  <img src="./imgs/dark-test.gif" width="500">
   <br>
   <em>In bright surroundings, the Vespera automatically reduces its brightness.</em>
 </p>
@@ -197,9 +197,9 @@ Below are photos and screenshots showing the setup, interaction, and performance
 
 ### 🌙 5. Reaction to Darkness
 <p align="center">
-  <img src="./imgs/dark-test.gif" width="500">
+  <img src="./imgs/bright-test.gif" width="500">
   <br>
-  <em>In darker environments, the Vesrera glows brighter – demonstrating the inverse brightness mechanism.</em>
+  <em>In darker environments, the Vespera glows brighter – demonstrating the inverse brightness mechanism.</em>
 </p>
 
 
