@@ -240,11 +240,19 @@ Below are photos and screenshots showing the setup, interaction, and performance
 
 ---
 
+## 🧪 Known Issues & Improvements
+
+### 1️⃣ Comet Mode – Smoothness Issue
+- **Issue:** The comet animation appears slightly “steppy” at low brightness, the head and tail move in discrete jumps rather than smooth transitions.   
+
+### 2️⃣ Brightness Mapping Range
+- **Issue:** In certain indoor light conditions, the LDR brightness change is subtle and the lamp response feels limited.  
+
+---
+
 ## 🚀 Future Improvements
 - Develop **adaptive brightness learning** — allow the lamp to learn user preferences over time.  
 - Implement **gesture-based or proximity interaction** for touch-free control.  
-- Create a **web dashboard** showing real-time brightness and historical trends using MQTT + D3.js.  
-- Add **sound-reactive mode**, making the Vespera respond to ambient music.  
 - Build a **3D-printed biophilic shell** inspired by natural light patterns.  
 
 ---
