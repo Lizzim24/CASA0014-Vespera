@@ -1,4 +1,4 @@
-## 🌙 Vespera – Inverse Brightness Lamp 
+## 🌙 Vespera – Inverse Brightness Lamp
 
 A multi-mode IoT lighting prototype that reacts inversely to ambient brightness and can switch visual effects via button and MQTT commands.
 
@@ -8,11 +8,11 @@ A multi-mode IoT lighting prototype that reacts inversely to ambient brightness 
 
 ## ✨ Overview
 
-**Vespera** explores how ambient light and human interaction can shape digital behavior.  
+**Vespera Lamp** explores how ambient light and human interaction can shape digital behavior.  
 The system **brightens in darkness** and **dims under strong light**, symbolizing balance between light and shadow.  
 It can be locally controlled via a button or remotely through **MQTT topics**.
 
-Vespera is an interactive lighting prototype that:
+Vespera lamp is an interactive lighting prototype that:
 - Uses an **LDR** to sense ambient light;
 - **Inverts** brightness (the darker it is outside, the brighter it glows);
 - Supports **five lighting modes** (CCT, Rainbow, Comet, Twinkle, Breath);
@@ -57,19 +57,46 @@ Vespera is an interactive lighting prototype that:
 ---
 
 ## 🧠 Software Logic Flow
-<p align="center">
-  <img src="./imgs/flowchart.jpg" width="600">
-  <br>
-  <em>Logic flowchart of sensing, processing, and communication.</em>
-</p>
 
-**Processing Steps**
-1. Read LDR value (ambient brightness)  
-2. Map to inverse brightness (dark → bright LED)  
-3. Detect button input  
-4. Render animation based on selected mode  
-5. Publish RGB payload to MQTT topic  
-6. Display and monitor data in MQTT Explorer  
+> This section explains how the Vespera controller works — from setup to MQTT communication and light rendering.
+> It outlines the data flow, control logic, and decision-making between the LDR sensor, button, and network system.
+
+### ⚙️ 1) Setup Stage
+- **Pins**
+  - LDR → **A0**
+  - Button → **D2 (INPUT_PULLUP)**
+  - Onboard RGB LED for status (Blue = connecting, Green = connected, Red = error)
+- **Wi-Fi**
+  - Connect to primary SSID; if not connected within ~15s, try fallback SSID
+- **MQTT**
+  - **Subscribe**:  
+    - `student/CASA0014/luminaire/26/cmd/power` (`on` / `off`)
+    - `student/CASA0014/luminaire/26/cmd/mode`  (`cct|rainbow|comet|twinkle|breath`)
+  - **Publish (retained)**:  
+    - `student/CASA0014/luminaire/26/power`
+    - `student/CASA0014/luminaire/26/mode`
+  - **Publish (when known)**:
+    - `student/CASA0014/luminaire/26/brightness` (0–255)
+
+
+### 🔁 2) Main Loop
+1. **Maintain connections**
+   - Reconnect Wi-Fi/MQTT if lost; call `mqttClient.loop()`
+2. **Handle Button**
+   - **Short press** → next **MODE** (CCT → Rainbow → Comet → Twinkle → Breath)  
+     → publish `/mode` (retained) → render immediately → publish full RGB payload
+   - **Long press** → toggle **POWER**  
+     → publish `/power` (retained) → render on/off → publish full RGB payload
+3. **Read Light Sensor (LDR)**
+   - Average 5 samples → normalize to 0–255 → **invert** (bright → low brightness) → **gamma 2.2**
+4. **Render cadence**
+   - **Animated modes** (Rainbow/Comet/Twinkle/Breath): render every ~40 ms (~25 FPS)
+   - **Static mode** (CCT): render only when brightness changes ≥ **5** or on **heartbeat** (~2 s)
+5. **Publish**
+   - Full payload (72×3 bytes) → `student/CASA0014/luminaire/26`
+   - Readable brightness (0–255) → `/brightness` on change or heartbeat
+6. Onboard RGB mirrors the **first pixel** color as a quick indicator
+7. Small idle delay (≈10 ms)
 
 ---
 
@@ -128,7 +155,7 @@ Media
 
 ## 📸 Prototype Demonstration
 
-Below are photos and screenshots showing the setup, interaction, and performance of the **Vespera inverse-brightness lamp**.
+Below are photos and screenshots showing the setup, interaction, and performance of the **Vespera inverse brightness lamp**.
 
 ---
 
@@ -136,8 +163,12 @@ Below are photos and screenshots showing the setup, interaction, and performance
 <p align="center">
   <img src="./imgs/setup.jpg" width="600">
   <br>
-  <em>Full setup of the Vespera prototype: Arduino MKR1010, LDR sensor, button, and RGB LED connection.</em>
+  <em>Full setup enclosed in a small Lego house, representing the interactive environment that influences the light intensity</em>
 </p>
+
+> 🏠 The Lego structure acts as a miniature room where ambient light conditions change.
+> By adjusting the walls, the LDR inside senses different light levels,
+> allowing the lamp brightness to adapt accordingly.
 
 
 ### 🌤 2. LDR Sensor Detail
@@ -245,8 +276,8 @@ In `arduino_secrets.h` add:
 ### 4️⃣ Connect to MQTT Broker
 - **Broker:** `mqtt.cetools.org`  
 - **Port:** `1884`  
-- Open **MQTT Explorer** (or another MQTT client)  
-- Subscribe to:
+- Open **MQTT Explorer** 
+- (Optional) Publish command to: cmd/power or cmd/mode
 
 
 ### 5️⃣ Test Interaction
@@ -272,5 +303,5 @@ In `arduino_secrets.h` add:
 ---
 
 ## 📘 License
-Project for **UCL CASA0014 – Internet of Things (2025)**  
+Project for **UCL CASA0014 – Prototyping the Internet of Things (25/26)**  
 © 2025 **Lizi Wang** All rights reserved.  Educational use only.
